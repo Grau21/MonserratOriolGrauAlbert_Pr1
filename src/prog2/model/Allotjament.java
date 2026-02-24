@@ -3,14 +3,14 @@ package prog2.model;
 public abstract class Allotjament implements InAllotjament {
     private String nom;
     private String id;
-    private float estadaMinimaTemporadaAlta;
-    private float estadaMinimaTemporadaBaixa;
+    private long estadaMinimaALTA_;
+    private long estadaMinimaBAIXA_;
 
-    public Allotjament(String nom, String id, float estadaMinimaTemporadaAlta, float estadaMinimaTemporadaBaixa) {
+    public Allotjament(String nom, String id, long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
         this.nom = nom;
         this.id = id;
-        this.estadaMinimaTemporadaAlta = estadaMinimaTemporadaAlta;
-        this.estadaMinimaTemporadaBaixa = estadaMinimaTemporadaBaixa;
+        this.estadaMinimaALTA_ = estadaMinimaALTA_;
+        this.estadaMinimaBAIXA_ = estadaMinimaBAIXA_;
     }
 
     @Override
@@ -27,13 +27,17 @@ public abstract class Allotjament implements InAllotjament {
 
     @Override
     public long getEstadaMinima(Temp temp) {
-        return temp == Temp.ALTA ? estadaMinimaTemporadaAlta : estadaMinimaTemporadaBaixa;
+        switch (temp) {
+            case ALTA: return estadaMinimaALTA_; break;
+            case BAIXA: return estadaMinimaBAIXA_; break;
+        }
+    return -1; // Revisar//////////////////////////////////////////
     }
 
     @Override
-    public void setEstadaMinima(float estadaMinimaTemporadaAlta, float estadaMinimaTemporadaBaixa) {
-        this.estadaMinimaTemporadaAlta = estadaMinimaTemporadaAlta;
-        this.estadaMinimaTemporadaBaixa = estadaMinimaTemporadaBaixa;
+    public void setEstadaMinima(long estadaMinimaALTA_, long estadaMinimaBAIXA_) {
+        this.estadaMinimaALTA_ = estadaMinimaALTA_;
+        this.estadaMinimaBAIXA_ = estadaMinimaBAIXA_;
     }
 
     @Override
@@ -42,7 +46,7 @@ public abstract class Allotjament implements InAllotjament {
     @Override
     public String toString() {
         return "Nom=" + nom + ", Id=" + id + 
-               ", estada mínima en temporada alta: " + estadaMinimaTemporadaAlta + 
-               ", estada mínima en temporada baixa: " + estadaMinimaTemporadaBaixa + ".";
+               ", estada mínima en temporada alta: " + estadaMinimaALTA_ +
+               ", estada mínima en temporada baixa: " + estadaMinimaBAIXA_ + ".";
     }
 }
