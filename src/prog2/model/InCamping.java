@@ -12,6 +12,8 @@ import prog2.vista.ExcepcioReserva;
  */
 public interface InCamping {
 
+
+
     /**
      * Retorna el nom del càmping.
      * @return el nom del càmping.
