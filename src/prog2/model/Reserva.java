@@ -17,11 +17,11 @@ public class Reserva implements InReserva {
         this.dateEntrada_ = dateEntrada_;
         this.dataSortida_ = dataSortida_;
 
-        if (dataSortida_.isBefore(dateEntrada_)) {
+        if (dataSortida_.isBefore(dateEntrada_)) { // Excepció amb un throw.
             throw new ExcepcioReserva("La data de sortida no pot ser abans de la data d'entrada");
         }
     }
-
+// Getters i Setters.
     public Allotjament getAllotjament_() { return allotjament_; }
 
     public Client getClient() { return client_; }
@@ -45,7 +45,7 @@ public class Reserva implements InReserva {
     public void setDataSortida(LocalDate dataSortida_) {
         this.dataSortida_ = dataSortida_;
     }
-
+// Que té allotjament
     @Override
     public String toString() {
         return "Allotjament=" + allotjament_ + ", client=" + client_ +
