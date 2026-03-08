@@ -8,7 +8,7 @@ public class Client implements InClient {
         this.nom = nom;
         this.dni = dni;
     }
-
+// Getters i Setters.
     @Override
     public String getNom() { return nom; }
 
