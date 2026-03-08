@@ -151,10 +151,11 @@ public class Camping implements InCamping {
     // Mètodes de suport //
     // ----------------- //
 
-    private Allotjament buscarAllotjament(String id){
+    private Allotjament buscarAllotjament(String id) throws ExcepcioReserva {
 
         Iterator<Allotjament> it = allotjamentsList.iterator();
 
+        // Iterem sobre la llista i comprovem si algun Allotjament té l'ID porporcionat.
         while(it.hasNext()){
             Allotjament a = it.next();
             if(a.getId().equals(id)){
@@ -162,13 +163,16 @@ public class Camping implements InCamping {
             }
         }
 
-        return null;
+        // Si no s'ha trobat cap allotjament amb el ID proporcionat, llancem una excepció.
+        String missatgeError = "Error: no exiteix el Allotjament amb ID " + id;
+        throw new ExcepcioReserva(missatgeError);
     }
 
-    private Client buscarClient(String dni){
+    private Client buscarClient(String dni) throws ExcepcioReserva {
 
         Iterator<Client> it = clientsList.iterator();
 
+        // Iterem sobre la llista i comprovem si algun Client té el DNI porporcionat.
         while(it.hasNext()){
             Client c = it.next();
             if(c.getDni().equals(dni)){
@@ -176,6 +180,8 @@ public class Camping implements InCamping {
             }
         }
 
-        return null;
+        // Si no s'ha trobat cap client amb el DNI proporcionat, llancem una excepció.
+        String missatgeError = "Error: no exiteix el Client amb dni " + dni;
+        throw new ExcepcioReserva(missatgeError);
     }
 }
