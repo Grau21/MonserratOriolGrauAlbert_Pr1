@@ -18,7 +18,7 @@ public abstract class Allotjament implements InAllotjament {
         this.nom = nom;
         this.id = id;
     }
-
+// Getters i Setters.
     @Override
     public String getNom() { return nom; }
 
@@ -47,10 +47,10 @@ public abstract class Allotjament implements InAllotjament {
         this.estadaMinimaALTA_ = estadaMinimaALTA_;
         this.estadaMinimaBAIXA_ = estadaMinimaBAIXA_;
     }
-
+// Correcte Funcionament
     @Override
     public abstract boolean correcteFuncionament();
-
+// Estada Minima Alta i Baixa.
     @Override
     public String toString() {
         return "Nom=" + nom + ", Id=" + id + 
