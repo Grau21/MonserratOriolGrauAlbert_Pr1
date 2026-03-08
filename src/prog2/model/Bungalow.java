@@ -8,13 +8,13 @@ public class Bungalow extends Casa {
 
     public Bungalow(String nom, String id, String mida, int habitacions, int placesPersones,
                     int placesParquing, boolean terrassa, boolean televisio, boolean aireFred) {
-        super(nom, id, mida, habitacions, placesPersones);
+        super(nom, id, mida, habitacions, placesPersones); // Heretem de casa amb el super.
         this.placesParquing = placesParquing;  // Asumim que és un parquing de 1 o 2 places.
         this.terrassa = terrassa;
         this.televisio = televisio;
         this.aireFred = aireFred;
     }
-
+// Getters i Setters.
     public int getPlacesParquing() { return placesParquing; }
     public void setPlacesParquing(int placesParquing) { this.placesParquing = placesParquing; }
     public boolean isTerrassa() { return terrassa; }
@@ -23,12 +23,12 @@ public class Bungalow extends Casa {
     public void setTelevisio(boolean televisio) { this.televisio = televisio; }
     public boolean isAireFred() { return aireFred; }
     public void setAireFred(boolean aireFred) { this.aireFred = aireFred; }
-
+// Correcte Funcionament.
     @Override
     public boolean correcteFuncionament() {
         return aireFred;
     }
-
+// Que té el Bungalow.
     @Override
     public String toString() {
         return super.toString() + " Bungalow{placesParquing=" + placesParquing +
