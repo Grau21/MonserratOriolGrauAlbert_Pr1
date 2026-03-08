@@ -5,9 +5,9 @@ public abstract class Casa extends Allotjament {
     private int habitacions;
     private int placesPersones;
 
-    public Casa(String nom, String id, float estadaMinimaTemporadaAlta, float estadaMinimaTemporadaBaixa,
-                String mida, int habitacions, int placesPersones) {
-        super(nom, id, estadaMinimaTemporadaAlta, estadaMinimaTemporadaBaixa);
+    public Casa(String nom, String id, String mida,
+                int habitacions, int placesPersones) {
+        super(nom, id);
         this.mida = mida;
         this.habitacions = habitacions;
         this.placesPersones = placesPersones;
