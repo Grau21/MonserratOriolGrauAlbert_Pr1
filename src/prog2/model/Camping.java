@@ -84,6 +84,8 @@ public class Camping implements InCamping {
         MobilHome mh = new MobilHome(nom_, idAllotjament_, mida, habitacions, placesPersones, terrassaBarbacoa);
         allotjamentsList.add(mh);
     }
+
+    @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         Allotjament a = buscarAllotjament(id_);
         Client c = buscarClient(dni_);
