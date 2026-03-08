@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Classe per gestionar els allotjaments del Càmping del Mar.
- * @author lauraigual
+ * @author Oriol Monserrat i Albert Grau.
  */
 public class GestorCamping {
 
