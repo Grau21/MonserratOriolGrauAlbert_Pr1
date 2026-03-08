@@ -87,6 +87,7 @@ public class Camping implements InCamping {
 
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
+        // Primer hem de comprovar que l'allotjament i el client existeixen
         Allotjament a = buscarAllotjament(id_);
         Client c = buscarClient(dni_);
 
@@ -99,6 +100,7 @@ public class Camping implements InCamping {
         int i = 0;
         Iterator<Allotjament> it = allotjamentsList.iterator();
 
+        // Iterem sobre la llista augmentant en 1 el comptador cada cop
         while (it.hasNext()) {
             Allotjament a = it.next();
             if (a.correcteFuncionament()) {
@@ -122,8 +124,8 @@ public class Camping implements InCamping {
             return null;
         }
 
+        // Iterem sobre la llista per trobar quin és el d'estada més curta
         Allotjament millor = it.next();
-
         while (it.hasNext()) {
             Allotjament actual = it.next();
             if (actual.getEstadaMinima(temp) < millor.getEstadaMinima(temp)) {
