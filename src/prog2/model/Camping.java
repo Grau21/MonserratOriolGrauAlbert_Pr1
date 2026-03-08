@@ -135,7 +135,7 @@ public class Camping implements InCamping {
     }
 
 
-    public static InAllotjament.Temp getTemporada(LocalDate data){
+    public static InAllotjament.Temp getTemporada(LocalDate data) {
 
         int dia = data.getDayOfMonth();
         int mes = data.getMonthValue();

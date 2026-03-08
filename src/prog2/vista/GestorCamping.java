@@ -1,10 +1,11 @@
 
 package prog2.vista;
 
-import prog2.model.Camping;
-import prog2.model.LlistaReserves;
+import prog2.model.*;
 
 import java.time.LocalDate;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 
 /**
@@ -28,12 +29,48 @@ public class GestorCamping {
         // Mostrar el número total d'allotjaments del Càmping i el número d'allotjaments que estan operatius amb el següent missatge:
         // >> El número total d'allotjaments del Càmping és X dels quals X allotjaments estan operatius.
         //--------------------------------------------------------------------------------------------------
-        // Per completar
+
+        int numAllotjaments = 0;
+        int numAllotjamentsOperatius = 0;
+        ArrayList<Allotjament>  allotjamentsList = campingMar.getLlistaAllotjaments();
+        Iterator<Allotjament> it = allotjamentsList.iterator();
+
+        // Iterem sobre la llista i comprovem quin està operatiu.
+        while(it.hasNext()){
+            Allotjament a = it.next();
+            numAllotjaments++;
+            if(a.correcteFuncionament()){
+                numAllotjamentsOperatius++;
+            }
+        }
+        System.out.println(">> El número total d'allotjaments del Càmping és " + numAllotjaments + " dels quals " +
+                           numAllotjamentsOperatius + " allotjaments estan operatius.");
 
         // Mostrar l'allotjament amb estada mínima de la temporada alta més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada alta més curta és el següent:
         //--------------------------------------------------------------------------------------------------
-        // Per completar
+
+        Iterator<Allotjament> itA = allotjamentsList.iterator();
+        LlistaReserves reservesList = campingMar.getLlistaReserves();
+        Iterator<Reserva> itR = reservesList.iterator();
+
+        // Iterem sobre la llista per trobar el primer allotjament de temporada alta.
+        Allotjament millor = null;
+        Reserva reserva;
+        LocalDate data;
+        while(millor == null){
+            reserva = it.next();
+            data = tmp.get
+        }
+        InAllotjament.Temp getTemporada(LocalDate data)
+
+        // Iterem sobre la llista i comparem quin allotjament de temporada alta té l'estada més curta.
+        while(it.hasNext()){
+            Allotjament a = it.next();
+
+        }
+        System.out.println(">> El número total d'allotjaments del Càmping és " + numAllotjaments + " dels quals " +
+                numAllotjamentsOperatius + " allotjaments estan operatius.");
        
     }
 
