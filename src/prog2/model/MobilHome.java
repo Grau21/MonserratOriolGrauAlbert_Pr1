@@ -16,7 +16,7 @@ public class MobilHome extends Casa {
     public boolean correcteFuncionament() {
         return terrassaBarbacoa;
     }
-// Que tñe MobilHome.
+// Que té MobilHome.
     @Override
     public String toString() {
         return super.toString() + " MobilHome{terrassaBarbacoa=" + terrassaBarbacoa + "}";
