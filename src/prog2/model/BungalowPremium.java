@@ -11,17 +11,17 @@ public class BungalowPremium extends Bungalow {
         this.serveisExtra = serveisExtra;
         this.codiWifi = codiWifi;
     }
-
+// Getters i Setters.
     public boolean isServeisExtra() { return serveisExtra; }
     public void setServeisExtra(boolean serveisExtra) { this.serveisExtra = serveisExtra; }
     public String getCodiWifi() { return codiWifi; }
     public void setCodiWifi(String codiWifi) { this.codiWifi = codiWifi; }
-
+// Correcte Funcionament.
     @Override
     public boolean correcteFuncionament() {
         return isAireFred() && codiWifi != null && codiWifi.length() >= 8 && codiWifi.length() <= 16;
     }
-
+// Que té el Bungalow Premium.
     @Override
     public String toString() {
         return super.toString() + " BungalowPremium{serveisExtra=" + serveisExtra +
