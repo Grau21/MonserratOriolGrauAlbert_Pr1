@@ -45,7 +45,7 @@ public class LlistaReserves implements InLlistaReserves {
         return reserves.size();
     }
 
-    private boolean allotjamentDisponible(Allotjament allotjament, LocalDate entrada, LocalDate sortida) {
+    private boolean allotjamentDisponible(Allotjament allotjament, LocalDate entrada, LocalDate sortida) { // Comprovar allotjament disponible.
         for (Reserva r : reserves) {
             if (r.getAllotjament_().equals(allotjament)) {
                 // Comprovar solapament: (entrada < r.getDataSortida() && sortida > r.getDataEntrada())
@@ -57,14 +57,14 @@ public class LlistaReserves implements InLlistaReserves {
         return true;
     }
 
-    private boolean isEstadaMinima(Allotjament allotjament, LocalDate entrada, LocalDate sortida) {
+    private boolean isEstadaMinima(Allotjament allotjament, LocalDate entrada, LocalDate sortida) { // Estada mínima de cada temporada.
         long dies = ChronoUnit.DAYS.between(entrada, sortida);
         InAllotjament.Temp temporada = getTemporada(entrada);
         long estadaMin = allotjament.getEstadaMinima(temporada);
         return dies >= estadaMin;
     }
 
-    private InAllotjament.Temp getTemporada(LocalDate data) {
+    private InAllotjament.Temp getTemporada(LocalDate data) { // Ens diu quina temporada és.
         int mes = data.getMonthValue();
         if (mes >= 6 && mes <= 9) {
             return InAllotjament.Temp.ALTA;
