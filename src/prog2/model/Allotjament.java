@@ -3,6 +3,8 @@ package prog2.model;
 public abstract class Allotjament implements InAllotjament {
     private String nom;
     private String id;
+    // Hem fet aquests dos atributs estàtics perquè té més sentit que
+    // siguin compartits per a tots els objectes de tipus Allotjaments
     private static long estadaMinimaALTA_;
     private static long estadaMinimaBAIXA_;
 
@@ -11,6 +13,13 @@ public abstract class Allotjament implements InAllotjament {
         this.id = id;
         Allotjament.estadaMinimaALTA_ = estadaMinimaALTA_;
         Allotjament.estadaMinimaBAIXA_ = estadaMinimaBAIXA_;
+    }
+
+    /*  Aquest constructor no usa estadaMinimaALTA_ ni estadaMinimaBAIXA_
+        perquè són "static" i llavors no fa falta canviar-les sempre. */
+    public Allotjament(String nom, String id) {
+        this.nom = nom;
+        this.id = id;
     }
 
     @Override
