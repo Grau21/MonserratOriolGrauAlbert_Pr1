@@ -31,8 +31,13 @@ public class LlistaReserves implements InLlistaReserves {
         }
 
         // Crear i afegir reserva
-        Reserva reserva = new Reserva(allotjament, client, dataEntrada, dataSortida);
-        reserves.add(reserva);
+        // Gestionem la excepció de crear una reserva en que la data d'entrada sigui posterior a la de sortida
+        try {
+            Reserva reserva = new Reserva(allotjament, client, dataEntrada, dataSortida);
+            reserves.add(reserva);
+        } catch (ExcepcioReserva e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

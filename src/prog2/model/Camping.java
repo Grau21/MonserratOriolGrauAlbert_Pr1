@@ -164,8 +164,7 @@ public class Camping implements InCamping {
         }
 
         // Si no s'ha trobat cap allotjament amb el ID proporcionat, llancem una excepció.
-        String missatgeError = "Error: no exiteix el Allotjament amb ID " + id;
-        throw new ExcepcioReserva(missatgeError);
+        throw new ExcepcioReserva("L'allotjament amb id " + id + " no existeix");
     }
 
     private Client buscarClient(String dni) throws ExcepcioReserva {
@@ -181,7 +180,6 @@ public class Camping implements InCamping {
         }
 
         // Si no s'ha trobat cap client amb el DNI proporcionat, llancem una excepció.
-        String missatgeError = "Error: no exiteix el Client amb dni " + dni;
-        throw new ExcepcioReserva(missatgeError);
+        throw new ExcepcioReserva("El client amb DNI " + dni + " no existeix");
     }
 }

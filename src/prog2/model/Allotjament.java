@@ -57,7 +57,7 @@ public abstract class Allotjament implements InAllotjament {
     @Override
     public String toString() {
         return "Nom=" + nom + ", Id=" + id + 
-               ", estada mínima en temporada alta: " + estadaMinimaALTA_ +
-               ", estada mínima en temporada baixa: " + estadaMinimaBAIXA_ + ".";
+               ", estada mínima en temp ALTA: " + estadaMinimaALTA_ +
+               ", estada mínima en temp BAIXA: " + estadaMinimaBAIXA_ + ".";
     }
 }
