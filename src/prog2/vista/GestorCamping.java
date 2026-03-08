@@ -50,27 +50,13 @@ public class GestorCamping {
         // >> L'allotjament amb estada mínima de la temporada alta més curta és el següent:
         //--------------------------------------------------------------------------------------------------
 
-        Iterator<Allotjament> itA = allotjamentsList.iterator();
-        LlistaReserves reservesList = campingMar.getLlistaReserves();
-        Iterator<Reserva> itR = reservesList.iterator();
-
-        // Iterem sobre la llista per trobar el primer allotjament de temporada alta.
-        Allotjament millor = null;
-        Reserva reserva;
-        LocalDate data;
-        while(millor == null){
-            reserva = it.next();
-            data = tmp.get
+        Allotjament allotjamentEstadaMesCurta = campingMar.getAllotjamentEstadaMesCurta(InAllotjament.Temp.ALTA);
+        if (allotjamentEstadaMesCurta != null) {
+            System.out.println(">> L'allotjament amb estada mínima de la temporada alta més curta és el següent:");
+            System.out.println(allotjamentEstadaMesCurta.toString());
+        } else {
+            System.out.println(">> No hi ha allotjaments disponibles per a la temporada alta.");
         }
-        InAllotjament.Temp getTemporada(LocalDate data)
-
-        // Iterem sobre la llista i comparem quin allotjament de temporada alta té l'estada més curta.
-        while(it.hasNext()){
-            Allotjament a = it.next();
-
-        }
-        System.out.println(">> El número total d'allotjaments del Càmping és " + numAllotjaments + " dels quals " +
-                numAllotjamentsOperatius + " allotjaments estan operatius.");
        
     }
 
