@@ -91,7 +91,21 @@ public class Camping implements InCamping {
         reserves.afegirReserva(a ,c , dataEntrada, dataSortida);
     }
 
-    //int calculAllotjamentsOperatius();
+    @Override
+    public int calculAllotjamentsOperatius() {
+
+        int i = 0;
+        Iterator<Allotjament> it = allotjamentsList.iterator();
+
+        while (it.hasNext()) {
+            Allotjament a = it.next();
+            if (a.correcteFuncionament()) {
+                i++;
+            }
+        }
+
+        return i;
+    }
 
     // ---------------- //
     // Mètodes de temps //
@@ -110,7 +124,6 @@ public class Camping implements InCamping {
 
         while (it.hasNext()) {
             Allotjament actual = it.next();
-
             if (actual.getEstadaMinima(temp) < millor.getEstadaMinima(temp)) {
                 millor = actual;
             }
@@ -142,7 +155,6 @@ public class Camping implements InCamping {
 
         while(it.hasNext()){
             Allotjament a = it.next();
-
             if(a.getId().equals(id)){
                 return a;
             }
@@ -157,7 +169,6 @@ public class Camping implements InCamping {
 
         while(it.hasNext()){
             Client c = it.next();
-
             if(c.getDni().equals(dni)){
                 return c;
             }
